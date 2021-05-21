@@ -21,33 +21,38 @@ class VinculosController extends Controller
     {
         $vinculos = Vinculos::all();
 
-        foreach ($vinculos as $vinculo)
+        if (count($vinculos) != 0)
         {
-            $funcionarios[$vinculo->vinculo_id] = Funcionarios::where('funcionario_id', $vinculo->funcionario_id)
-                ->first();
-            $cargos[$vinculo->vinculo_id] = Cargos::where('cargo_id', $vinculo->cargo_id)->first();
-            $empresas[$vinculo->vinculo_id] = Empresas::where('empresa_id', $vinculo->empresa_id)->first();
-            $created_at[$vinculo->vinculo_id] = $vinculo->created_at;
+            foreach ($vinculos as $vinculo)
+            {
+                $funcionarios[$vinculo->funcionario_id] = Funcionarios::where('funcionario_id', $vinculo->funcionario_id)
+                    ->first();
+                $cargos[$vinculo->cargo_id] = Cargos::where('cargo_id', $vinculo->cargo_id)->first();
+                $empresas[$vinculo->empresa_id] = Empresas::where('empresa_id', $vinculo->empresa_id)->first();
+                $created_at[$vinculo->vinculo_id] = $vinculo->created_at;
 
-            if (($funcionarios[$vinculo->vinculo_id]->status == 0) || ($empresas[$vinculo->vinculo_id]->status == 0) ||
-                ($cargos[$vinculo->vinculo_id]->status == 0))
+                if (($funcionarios[$vinculo->funcionario_id]->status == 0) || ($empresas[$vinculo->empresa_id]->status == 0)
+                    || ($cargos[$vinculo->cargo_id]->status == 0))
                 {
                     $vinculo->status = 0;
                 }
-            else
-            {
-                $vinculo->status = 1;
+                else
+                {
+                    $vinculo->status = 1;
+                }
             }
+            return view('vinculos', [
+                'vinculos' => $vinculos,
+                'funcionarios' => $funcionarios,
+                'cargos' => $cargos,
+                'empresas' => $empresas,
+                'status' => $vinculo->status,
+                'created_at' => $created_at
+            ]);
+        } else
+        {
+            return view('vinculos');
         }
-
-        return view('vinculos', [
-            'vinculos' => $vinculos,
-            'funcionarios' => $funcionarios,
-            'cargos' => $cargos,
-            'empresas' => $empresas,
-            'status' => $vinculo->statusss,
-            'created_at' => $created_at
-        ]);
     }
 
     /**

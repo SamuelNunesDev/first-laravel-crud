@@ -26,7 +26,7 @@ class CreateVinculosTable extends Migration
             $table->foreign('cargo_id')->references('cargo_id')->on('cargos')
                 ->onUpdate('CASCADE');
             $table->foreign('empresa_id')->references('empresa_id')->on('empresas')
-                ->onUpdate('CASACADE');
+                ->onUpdate('CASCADE');
         });
     }
 

@@ -93,13 +93,14 @@
         </tr>
         </thead>
         <tbody>
+        @if(!empty($vinculos))
         @foreach($vinculos as $vinculo)
             <tr>
                 <th scope="row">{{ $vinculo->vinculo_id }}</th>
-                <td>{{ $funcionarios[$vinculo->vinculo_id]->nome }}</td>
-                <td>{{ date('d/m/Y', strtotime($funcionarios[$vinculo->vinculo_id]->data_nascimento)) }}</td>
-                <td>{{ $cargos[$vinculo->vinculo_id]->nome }}</td>
-                <td>{{ $empresas[$vinculo->vinculo_id]->nome }}</td>
+                <td>{{ $funcionarios[$vinculo->funcionario_id]->nome }}</td>
+                <td>{{ date('d/m/Y', strtotime($funcionarios[$vinculo->funcionario_id]->data_nascimento)) }}</td>
+                <td>{{ $cargos[$vinculo->cargo_id]->nome }}</td>
+                <td>{{ $empresas[$vinculo->empresa_id]->nome }}</td>
                 <td>{{ $vinculo->status }}</td>
                 <td> {{ date('d/m/Y H:i', strtotime($created_at[$vinculo->vinculo_id])) }}</td>
                 <td>
@@ -118,6 +119,7 @@
                 </td>
             </tr>
         @endforeach
+        @endif
         </tbody>
     </table>
 </div>
