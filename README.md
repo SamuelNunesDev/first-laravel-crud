@@ -13,7 +13,7 @@
 * created_at -> tipo timestamp.
 * updated_at -> tipo timestamp.
 
-### 1.1 **Tabela Cargos** 
+### 1. **Tabela Cargos** 
 
 #### A tabela cargos tem finalidade registrar cargos utilizando os campos abaixo:
 
@@ -23,7 +23,7 @@
 * created_at -> tipo timestamp.
 * updated_at -> tipo timestamp.
 
-### 1.2 **Tabela Empresas**
+### 1. **Tabela Empresas**
 
 #### A tabela empresas tem finalidade de registrar empresas utilizando os campos abaixo:
 
@@ -33,7 +33,7 @@
 * created_at -> tipo timestamp.
 * updated_at -> tipo timestamp.
 
-### 1.3 **Tabela Vinculos**
+### 1. **Tabela Vinculos**
 
 #### A tabela vinculos é uma tabela pivot que recebe atributos de cada uma das outras três tabelas (funcionarios, cargos e empresas). Logo abaixo temos os campos e o diagrama de entidade-relacionamento. 
 
