@@ -1,0 +1,31 @@
+#titulo {
+    margin-top: 20px;
+    text-align :left;
+    color: #e86803;
+    font-family: "Open Sans";
+    font-size: xxx-large;
+    font-weight: bolder;
+}
+body {
+    background-color: rgba(18, 18, 18);
+}
+
+td, th, tr, form {
+    text-align: center;
+}
+table {
+    background-color: rgba(255, 255, 255, 0.91);
+    font-size: .8rem;
+}
+#subtitulo{
+    color: white;
+    font-size: large;
+
+}
+#btCriar, #tables, #subtitulo {
+    width: auto;
+    margin-top: 38px;
+    margin-right: 10px;
+    margin-bottom: 25px;
+    margin-left: 35px;
+}
