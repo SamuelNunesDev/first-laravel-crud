@@ -52,8 +52,8 @@
 
 ### -> Lista de futuras features para o projeto.
 
+- [x] Implementação da licensa.
 - [ ] Implementação de HTML5, CSS3, JavaScript e Bootstrap em todas as interfaces.
-- [ ] Otimização do código criando arquivos secundários .CSS para as views.
+- [ ] Otimização do código criando arquivos secundários .css para as views.
 - [ ] Otimização do código criando template para as views.
 - [ ] Ajuste das arrays, de preferencia utilizar recursos do laravel para resolver.
-- [ ] Implementação da licensa.
